@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/index.css" />
+    <title>Celsius A Fahrenheit</title>
+  </head>
+  <body class="max-h-screen bg-slate-700">
+    <div class="container mx-auto mt-32">
+      <h2 class="font-bold text-gray-200 text-2xl text-center uppercase" >
+        <span class="border-b-2 border-stone-100 py-1 " id="titulo"
+          >ingrese grados celsius para convertir a fahrenheit</span
+        >
+      </h2>
+      <div class="flex flex-col items-center text-center">
+        <div class="mt-12 px-20 py-2 rounded-lg">
+          <input
+            type="number"
+            id="input1"
+            placeholder="ingrese grados"
+            class="border-2 p-2 w-[150px] mt-2 placeholder-gray-400 rounded-md text-center"
+          />
+          <button
+            class="bg-red-800 rounded-md mt-4 text-white p-2 text-lg mx-1 font-bold cursor-pointer hover:bg-red-900 transition duration-300 ease-in-out"
+            onclick="convertir()">Convertir</button>
+          <button
+            class="bg-red-800 rounded-md mt-4 text-white p-2 text-lg mx-1 font-bold cursor-pointer hover:bg-red-900 transition duration-300 ease-in-out"
+            onclick="cambiar()" id="btn2">Fahrenheit</button>
+          <h3
+            class="mt-7 uppercase bg-slate-200 rounded-md px-2 py-1 mx-5 text-center hidden text-lg font-bold"
+            id="show-rs"
+          >
+            <!-- <span id="resultado"></span> -->
+          </h3>
+          <div class="mt-5 uppercase bg-slate-200 text-red-700 rounded-md px-2 py-1 mx-5 text-center hidden text-lg font-bold" id="error"></div>
+       </div>
+      </div>
+      <div class="mx-auto items-center flex flex-col px-10 mt-32">
+        <p class="text-yellow-50 leading-6 text-lg">
+          Para convertir de grados Celsius a Fahrenheit, se utiliza la
+          fórmula:<br />
+          °F = (°C × 9/5) + 32<br /><br />
+          
+          Para convertir de grados Fahrenheit a Celsius, se utiliza la
+          fórmula:<br />
+          °C = (°F - 32) × 5/9<br /><br />
+          Donde °C representa la temperatura en grados Celsius y °F representa
+          la temperatura en grados Fahrenheit.
+        </p>
+      </div>
+    </div>
+
+    <script src="/src/components/convertidor.js"></script>
+  </body>
+</html> 
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo de conversión de Celsius a Fahrenheit</title>
+</head>
+<body>
+	<h1 class="titulo">Conversión de Celsius a Fahrenheit</h1>
+	
+	<label for="input1">Grados:</label>
+	<input type="text" id="input1">
+	<button onclick="convertir()">Convertir</button>
+	<button onclick="cambiarDireccion()">Cambiar Dirección</button>
+	
+	<p id="resultado" class="hidden"></p>
+	
+	<script>
+		const result = document.getElementById('resultado');
+		const input1 = document.getElementById('input1');
+		let celsiusToFahrenheit = true;
+		
+		function convertir() {
+			if (!input1.value) {
+				return;
+			}
+			
+			result.classList.replace("hidden", "block");
+			
+			let res = 0;
+			if (celsiusToFahrenheit) {
+				res = input1.value * 1.8 + 32;
+				result.textContent = `${input1.value} Grados Celsius son ${res} Grados Fahrenheit.`;
+			} else {
+				res = (input1.value - 32) * 5 / 9;
+				result.textContent = `${input1.value} Grados Fahrenheit son ${res} Grados Celsius.`;
+			}
+		}
+		
+		function cambiarDireccion() {
+			celsiusToFahrenheit = !celsiusToFahrenheit;
+			
+      console.log('cambio')
+		}
+	</script>
+</body>
+</html> -->
